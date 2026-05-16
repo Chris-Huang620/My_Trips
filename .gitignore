@@ -1,0 +1,8 @@
+# OS cruft
+.DS_Store
+
+# Inside each trip folder, only commit the deploy/ output.
+# Working files (source HTML, .skill files, raw photos, notes) stay local.
+/*/*
+!/*/deploy/
+!/*/deploy/**

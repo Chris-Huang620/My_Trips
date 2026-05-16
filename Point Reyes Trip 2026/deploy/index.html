@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Point Reyes — A Weekend Field Guide · June 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream: #F0E8D8;
+    --cream-2: #E8DFCB;
+    --cream-3: #DCD0B6;
+    --ink: #1A1612;
+    --ink-soft: #3D352D;
+    --ink-mute: #6B6157;
+    --crimson: #B53029;
+    --crimson-deep: #8B1F1A;
+    --sweater: #C9A876;
+    --lime: #B8D03A;
+    --lime-deep: #8FA428;
+    --line: #C9BFA8;
+    --line-soft: #DCD2BC;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink-soft);
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 56px;
+  }
+
+  /* ---------- Masthead ---------- */
+  .masthead {
+    border-bottom: 1px solid var(--line);
+    padding: 22px 0;
+    background: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .masthead-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .mast-title {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .mast-title em { font-style: normal; color: var(--crimson); }
+  .mast-nav {
+    display: flex;
+    gap: 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+  }
+  .mast-nav a {
+    color: var(--ink-mute);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .mast-nav a:hover { color: var(--crimson); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 96px 0 64px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--crimson);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    height: 1px;
+    width: 56px;
+    background: var(--crimson);
+  }
+  .hero-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 9vw, 108px);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    font-weight: 400;
+    margin-bottom: 36px;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--crimson);
+    font-weight: 400;
+  }
+  .hero-lede {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 720px;
+    margin-bottom: 56px;
+  }
+  .hero-meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .meta-cell {
+    padding: 22px 24px 22px 0;
+    border-right: 1px solid var(--line-soft);
+  }
+  .meta-cell:last-child { border-right: none; padding-right: 0; }
+  .meta-cell:not(:first-child) { padding-left: 24px; }
+  .meta-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-mute);
+    margin-bottom: 8px;
+  }
+  .meta-value {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .meta-value em { font-style: italic; color: var(--crimson); }
+
+  /* ---------- Section base ---------- */
+  section.pb-section {
+    padding: 88px 0 24px;
+  }
+  .pb-sec-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    margin-bottom: 48px;
+  }
+  .pb-sec-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 88px;
+    line-height: 0.8;
+    color: var(--crimson);
+    flex-shrink: 0;
+  }
+  .pb-sec-title-block { padding-top: 14px; }
+  .pb-sec-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--ink-mute);
+    margin-bottom: 10px;
+  }
+  .pb-sec-title {
+    font-family: 'Fraunces', serif;
+    font-size: 44px;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .pb-sec-title em { font-style: italic; color: var(--crimson); }
+
+  /* ---------- Timeline ---------- */
+  .day-block { margin-bottom: 72px; }
+  .day-header {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 28px;
+  }
+  .day-name {
+    font-family: 'Fraunces', serif;
+    font-size: 36px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .day-name em { font-style: italic; color: var(--crimson); }
+  .day-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-mute);
+  }
+  .day-note {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-mute);
+    margin-bottom: 28px;
+    max-width: 720px;
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 28px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .timeline-item:last-child { border-bottom: none; }
+  .ti-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--crimson);
+    letter-spacing: 0.08em;
+    padding-top: 4px;
+  }
+  .ti-body {}
+  .ti-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 6px;
+    line-height: 1.25;
+  }
+  .ti-title em { font-style: italic; color: var(--crimson); }
+  .ti-text {
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .ti-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    padding: 3px 8px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--ink-mute);
+    margin-right: 6px;
+    margin-top: 8px;
+    background: var(--cream-2);
+  }
+  .ti-tag.crimson { color: var(--crimson); border-color: var(--crimson); background: transparent; }
+  .ti-tag.lime { color: var(--lime-deep); border-color: var(--lime-deep); background: transparent; }
+  .ti-tag.sweater { color: #8a6b3a; border-color: var(--sweater); background: transparent; }
+
+  /* ---------- Place cards ---------- */
+  .place-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .place-card {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    padding: 36px 0;
+    border-bottom: 1px solid var(--line-soft);
+    align-items: flex-start;
+  }
+  .place-card:last-child { border-bottom: none; }
+  .place-thumb {
+    aspect-ratio: 4/3;
+    background: var(--cream-2);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .place-thumb-icon {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 72px;
+    color: var(--crimson);
+    opacity: 0.85;
+  }
+  .place-thumb-label {
+    position: absolute;
+    bottom: 10px;
+    left: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-mute);
+  }
+  .place-body {}
+  .place-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--crimson);
+    margin-bottom: 8px;
+  }
+  .place-name {
+    font-family: 'Fraunces', serif;
+    font-size: 30px;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+  .place-name em { font-style: italic; color: var(--crimson); }
+  .place-desc {
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+    line-height: 1.65;
+  }
+  .place-facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 24px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line-soft);
+  }
+  .fact {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 12px;
+    padding: 6px 0;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .fact-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink-mute);
+    padding-top: 3px;
+  }
+  .fact-value strong { font-weight: 600; color: var(--ink); }
+  .fact-value .yes { color: var(--lime-deep); font-weight: 600; }
+  .fact-value .no { color: var(--crimson); font-weight: 600; }
+
+  /* ---------- Pull quote ---------- */
+  .pb-pullquote {
+    padding: 24px 0 24px 28px;
+    border-left: 3px solid var(--crimson);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 26px;
+    line-height: 1.4;
+    color: var(--ink);
+    margin: 48px 0;
+    max-width: 780px;
+  }
+  .pb-pullquote .attr {
+    display: block;
+    margin-top: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-style: normal;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink-mute);
+  }
+
+  /* ---------- Callouts ---------- */
+  .callout {
+    background: var(--cream-2);
+    border-left: 3px solid var(--crimson);
+    padding: 20px 26px;
+    margin: 36px 0;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .callout.sweater { border-left-color: var(--sweater); }
+  .callout.lime { border-left-color: var(--lime-deep); }
+  .callout-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--crimson);
+    padding-top: 2px;
+  }
+  .callout.sweater .callout-label { color: #8a6b3a; }
+  .callout.lime .callout-label { color: var(--lime-deep); }
+  .callout-body {
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .callout-body strong { color: var(--ink); }
+
+  /* ---------- Packing list ---------- */
+  .pack-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .pack-col {
+    border-top: 2px solid var(--ink);
+    padding-top: 18px;
+  }
+  .pack-col-title {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .pack-col-title em { color: var(--crimson); }
+  .pack-list { list-style: none; padding: 0; }
+  .pack-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 7px 0;
+    font-size: 15px;
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .pack-list li::before {
+    content: '☐';
+    color: var(--crimson);
+    font-size: 16px;
+    line-height: 1.4;
+    flex-shrink: 0;
+  }
+  .pack-list li.essential::before { content: '★'; color: var(--crimson); }
+
+  /* ---------- Footer ---------- */
+  footer {
+    margin-top: 88px;
+    border-top: 1px solid var(--line);
+    padding: 36px 0 56px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-mute);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  footer em {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 15px;
+    color: var(--crimson);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .container { padding: 0 24px; }
+    .mast-nav { display: none; }
+    .hero { padding: 64px 0 48px; }
+    .hero-meta { grid-template-columns: repeat(2, 1fr); }
+    .meta-cell { border-right: none; border-bottom: 1px solid var(--line-soft); padding-left: 0 !important; padding-right: 0 !important; }
+    .meta-cell:nth-child(odd) { padding-right: 16px !important; border-right: 1px solid var(--line-soft) !important; }
+    .meta-cell:nth-child(even) { padding-left: 16px !important; }
+    section.pb-section { padding: 56px 0 16px; }
+    .pb-sec-head { gap: 18px; margin-bottom: 32px; }
+    .pb-sec-num { font-size: 56px; }
+    .pb-sec-title { font-size: 28px; }
+    .timeline-item { grid-template-columns: 1fr; gap: 6px; }
+    .place-card { grid-template-columns: 1fr; gap: 20px; }
+    .place-thumb { max-width: 240px; }
+    .place-facts { grid-template-columns: 1fr; }
+    .callout { grid-template-columns: 1fr; gap: 10px; }
+    .pack-grid { grid-template-columns: 1fr; }
+    .day-name { font-size: 26px; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== MASTHEAD ==================== -->
+<header class="masthead">
+  <div class="container masthead-row">
+    <div class="mast-title">A Weekend in <em>Point Reyes</em></div>
+    <nav class="mast-nav">
+      <a href="#timeline">Timeline</a>
+      <a href="#places">Places</a>
+      <a href="#packing">Packing</a>
+      <a href="#notes">Notes</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ==================== HERO ==================== -->
+<div class="container">
+  <section class="hero">
+    <div class="hero-eyebrow">A Field Guide · June 5–7, 2026</div>
+    <h1 class="hero-title">A Slow Weekend at <em>Point&nbsp;Reyes</em></h1>
+    <p class="hero-lede">
+      Two nights at the edge of the Pacific with Richard, Chris, and a very small American Eskimo named Mochi.
+      Oysters, mead, fog-bleached cliffs, and one very photogenic tunnel of cypress trees — paced for a working
+      morning person and a post-lunch napper.
+    </p>
+
+    <div class="hero-meta">
+      <div class="meta-cell">
+        <div class="meta-label">Travelers</div>
+        <div class="meta-value">Chris · Richard · <em>Mochi</em></div>
+      </div>
+      <div class="meta-cell">
+        <div class="meta-label">Dates</div>
+        <div class="meta-value">Fri 6/5 → Sun 6/7</div>
+      </div>
+      <div class="meta-cell">
+        <div class="meta-label">Basecamp</div>
+        <div class="meta-value">Point Reyes Station Inn · <em>Sun Room</em></div>
+      </div>
+      <div class="meta-cell">
+        <div class="meta-label">Confirmation</div>
+        <div class="meta-value">#11448546</div>
+      </div>
+    </div>
+
+    <div class="pb-pullquote">
+      Go out in the morning. Come back. Nap. Then go out again at three.
+      <span class="attr">The Richard Doctrine · House Rule of the Weekend</span>
+    </div>
+  </section>
+</div>
+
+<!-- ==================== SECTION 01 — TIMELINE ==================== -->
+<div class="container" id="timeline">
+  <section class="pb-section">
+    <div class="pb-sec-head">
+      <div class="pb-sec-num">01</div>
+      <div class="pb-sec-title-block">
+        <div class="pb-sec-kicker">Section One · The Itinerary</div>
+        <h2 class="pb-sec-title">Hour by hour, <em>across three days.</em></h2>
+      </div>
+    </div>
+
+    <!-- ============ FRIDAY ============ -->
+    <div class="day-block">
+      <div class="day-header">
+        <div class="day-name"><em>Friday</em> — The Drive</div>
+        <div class="day-date">June 5, 2026</div>
+      </div>
+      <p class="day-note">Easy day. Just get there. Save the legs for Saturday.</p>
+
+      <div class="timeline-item">
+        <div class="ti-time">3:30 PM</div>
+        <div class="ti-body">
+          <div class="ti-title">Depart <em>1200 Rickabaugh Way</em>, Santa Clara</div>
+          <div class="ti-text">Roughly 2 hours 30 minutes north to Point Reyes Station. Bay Bridge / 580 / 101 routing — leave at 3:30 to dodge the worst of the Marin commute.</div>
+          <span class="ti-tag crimson">Chris drives</span>
+          <span class="ti-tag">Mochi backseat</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="ti-time">6:00 PM</div>
+        <div class="ti-body">
+          <div class="ti-title">Arrive at <em>Point Reyes Station Inn</em></div>
+          <div class="ti-text">11591 CA-1, Point Reyes Station. Check in to the Sun Room (ground floor, private garden patio). Get Mochi settled, stretch the legs in town.</div>
+          <span class="ti-tag sweater">Dog-friendly room</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="ti-time">7:00 PM</div>
+        <div class="ti-body">
+          <div class="ti-title">Dinner at <em>Cafe Reyes</em></div>
+          <div class="ti-text">Wood-fired pizza and oysters with a dog-friendly outdoor patio. Two blocks from the Inn. No reservations — walk in.</div>
+          <span class="ti-tag lime">Dogs welcome</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="ti-time">8:30 PM</div>
+        <div class="ti-body">
+          <div class="ti-title">Wind down</div>
+          <div class="ti-text">Stroll the Tomales Bay side or settle in early. Richard sets out coffee and laptop for the 3 AM shift.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SATURDAY ============ -->
+    <div class="day-block">
+      <div class="day-header">
+        <div class="day-name"><em>Saturday</em> — The Long Coast</div>
+        <div class="day-date">June 6, 2026 · The Big Day</div>
+      </div>
+      <p class="day-note">Heavier on the legs — both Lighthouse stairs and Chimney Rock are on today. Light AM, big PM, with a nap engineered into the middle.</p>
+
+      <div class="timeline-item">
+        <div class="ti-time">3:00 AM</div>
+        <div class="ti-body">
+          <div class="ti-title">Richard's quiet hours</div>
+          <div class="ti-text">In-room Keurig. The Sun Room's private garden patio is the working "lobby" — quiet, outdoor, and Mochi-adjacent without waking Chris.</div>
+          <span class="ti-tag crimson">See Notes §05</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="ti-time">8:30 AM</div>
+        <div class="ti-body">
+          <div class="ti-title">Breakfast at <em>Side Street Kitchen</em> or <em>Bovine Bakery</em></div>
+          <div class="ti-text">Both within a five-minute walk. Bovine for pastries to-go; Side Street if you want a dog patio and a French press.</div>
+          <span class="ti-tag lime">Dog patio (Side Street)</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="ti-time">9:30 AM</div>
+        <div class="ti-body">
+          <div class="ti-title"><em>Cypress Tree Tunnel</em></div>
+          <div class="ti-text">Twenty-minute photo stop on the way out the peninsula. Soft morning light, fewer cars before 10. Mochi is allowed (leashed) — this is one of the only "wow" spots in Point Reyes where dogs join.</div>
+          <span class="ti-tag lime">Dogs on leash</span>
+          <span class="ti-tag">~15–20 min</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="ti-time">10:30 AM</div>
+        <div class="ti-body">
+          <div class="ti-title"><em>Heidrun Meadery</em> · Sparkling honey wine</div>
+          <div class="ti-text">Opens at 11. Outdoor garden tasting with the bee forage farmscape. Mochi is fine outside (not inside the tasting room or production facility). Saturday 11:30 tour runs $45 — optional but charming if Chris wants to commit.</div>
+          <span class="ti-tag sweater">Dogs outdoor only</span>
+          <span class="ti-tag">~1 hr</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="ti-time">12:30 PM</div>
+        <div class="ti-body">
+          <div class="ti-title">Lunch at <em>Hog Island Oyster Farm</em>, Marshall</div>
+          <div class="ti-text">Fifteen minutes north on Tomales Bay. The Boat Oyster Bar runs 11 AM–4 PM. <strong>Picnic tables with grills are reservation-only Fri–Mon</strong> — book before you go. Walk-up oysters at the bar otherwise. Dog-friendly outdoor.</div>
+          <span class="ti-tag crimson">Reserve ahead</span>
+          <span class="ti-tag lime">Dogs outside</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="ti-time">2:30 PM</div>
+        <div class="ti-body">
+          <div class="ti-title">Back to the Inn · <em>Richard's nap</em></div>
+          <div class="ti-text">The whole afternoon is built around this. One hour minimum, two if needed. Mochi naps too.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="ti-time">3:45 PM</div>
+        <div class="ti-body">
+          <div class="ti-title">Drive to <em>Chimney Rock</em> &amp; the Lighthouse</div>
+          <div class="ti-text">Forty-five minutes from the Inn out to the headlands. Afternoon is often <strong>clearer than morning</strong> — fog burns off by midday on the lighthouse side. Bring layers anyway; the wind is real.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="ti-time">4:30 PM</div>
+        <div class="ti-body">
+          <div class="ti-title"><em>Chimney Rock Trail</em> · 1.8 mi round trip</div>
+          <div class="ti-text">Open coastal walk, 1–2 hours. Elephant seals are still hauled out into early June. <strong>Dogs are not allowed on this trail</strong> — take turns. One person walks the headland while the other sits with Mochi at the parking pullout (shaded, breezy, fine).</div>
+          <span class="ti-tag crimson">No dogs on trail</span>
+          <span class="ti-tag">~1 hr</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="ti-time">5:45 PM</div>
+        <div class="ti-body">
+          <div class="ti-title"><em>Point Reyes Lighthouse</em></div>
+          <div class="ti-text">Visitor center closes at 4 PM (Thu–Mon) but the overlook and the 308-step descent stay accessible until dusk if winds are under 40 mph. Take turns again; this one is dramatic at golden hour.</div>
+          <span class="ti-tag crimson">No dogs on trail</span>
+          <span class="ti-tag sweater">308 steps each way</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="ti-time">7:30 PM</div>
+        <div class="ti-body">
+          <div class="ti-title">Dinner at <em>Side Street Kitchen</em></div>
+          <div class="ti-text">Rotisserie chicken, slow-cooked meats, dog patio. Order at the window — they bring it out. Quiet end to a long day.</div>
+          <span class="ti-tag lime">Dog patio</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SUNDAY ============ -->
+    <div class="day-block">
+      <div class="day-header">
+        <div class="day-name"><em>Sunday</em> — The Slow Return</div>
+        <div class="day-date">June 7, 2026</div>
+      </div>
+      <p class="day-note">Mirror of Friday — long drive bookending it. Keep activities flat and low-mileage.</p>
+
+      <div class="timeline-item">
+        <div class="ti-time">8:00 AM</div>
+        <div class="ti-body">
+          <div class="ti-title">Breakfast &amp; <em>Bovine Bakery</em> pastries to-go</div>
+          <div class="ti-text">Morning bun and a buttermilk scone. Walk Mochi along the main drag and pop into the Cowgirl Creamery shop next door for cheese to take home.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="ti-time">10:00 AM</div>
+        <div class="ti-body">
+          <div class="ti-title">Pack &amp; load the car</div>
+          <div class="ti-text">Easy morning. Garden patio coffee. No driving until after lunch.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="ti-time">11:00 AM</div>
+        <div class="ti-body">
+          <div class="ti-title">Check out</div>
+          <div class="ti-text">Drop the keys. Hotel checkout is 11 AM sharp.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="ti-time">11:30 AM</div>
+        <div class="ti-body">
+          <div class="ti-title">One last walk · <em>Tomales Bay Trail</em> or back to <em>Cypress Tunnel</em></div>
+          <div class="ti-text">Pick whichever wasn't done justice on Saturday. Stay low-effort — long drive ahead.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="ti-time">1:00 PM</div>
+        <div class="ti-body">
+          <div class="ti-title">Depart for home</div>
+          <div class="ti-text"><strong>Chris drives so Richard can nap</strong> — the whole point of the timing. Roughly 2.5 hours back to Santa Clara.</div>
+          <span class="ti-tag crimson">Chris driving</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="ti-time">3:30 PM</div>
+        <div class="ti-body">
+          <div class="ti-title">Home</div>
+          <div class="ti-text">Unload. Feed Mochi. Done.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ==================== SECTION 02 — PLACES ==================== -->
+<div class="container" id="places">
+  <section class="pb-section">
+    <div class="pb-sec-head">
+      <div class="pb-sec-num">02</div>
+      <div class="pb-sec-title-block">
+        <div class="pb-sec-kicker">Section Two · The Stops</div>
+        <h2 class="pb-sec-title">Where we're going, <em>what to expect.</em></h2>
+      </div>
+    </div>
+
+    <div class="place-grid">
+
+      <!-- Cypress Tree Tunnel -->
+      <div class="place-card">
+        <div class="place-thumb">
+          <div class="place-thumb-icon">⌖</div>
+          <div class="place-thumb-label">Cypress Tunnel</div>
+        </div>
+        <div class="place-body">
+          <div class="place-kicker">The Photograph</div>
+          <h3 class="place-name">Cypress Tree <em>Tunnel</em></h3>
+          <p class="place-desc">
+            A quarter-mile corridor of Monterey cypress trees planted in the 1930s, leading to a former
+            transatlantic radio receiving station. The image you've seen on every Point Reyes Pinterest board.
+            Best at dawn or late afternoon when the light tunnels through. Twenty minutes is enough — half an hour
+            if Mochi is photogenic that day.
+          </p>
+          <div class="place-facts">
+            <div class="fact"><div class="fact-label">Hours</div><div class="fact-value">Open <strong>24/7</strong></div></div>
+            <div class="fact"><div class="fact-label">Dogs</div><div class="fact-value"><span class="yes">Yes</span> — leashed</div></div>
+            <div class="fact"><div class="fact-label">Time</div><div class="fact-value">15–30 min</div></div>
+            <div class="fact"><div class="fact-label">Cost</div><div class="fact-value">Free</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Heidrun Meadery -->
+      <div class="place-card">
+        <div class="place-thumb">
+          <div class="place-thumb-icon">🜸</div>
+          <div class="place-thumb-label">Heidrun Meadery</div>
+        </div>
+        <div class="place-body">
+          <div class="place-kicker">The Tasting</div>
+          <h3 class="place-name">Heidrun <em>Meadery</em></h3>
+          <p class="place-desc">
+            Sparkling honey wines, made champagne-style from monofloral honeys — orange blossom, sage, buckwheat.
+            The garden tasting is the move. There's a bee-forage farmscape you can wander through. Saturday 11:30
+            tour runs about 75 minutes if you want to commit ($45). Otherwise just show up, sit outside, drink.
+          </p>
+          <div class="place-facts">
+            <div class="fact"><div class="fact-label">Hours</div><div class="fact-value">Daily <strong>11 AM–5 PM</strong></div></div>
+            <div class="fact"><div class="fact-label">Dogs</div><div class="fact-value"><span class="yes">Outside only</span></div></div>
+            <div class="fact"><div class="fact-label">Time</div><div class="fact-value">60–90 min</div></div>
+            <div class="fact"><div class="fact-label">Address</div><div class="fact-value">11925 CA-1</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hog Island -->
+      <div class="place-card">
+        <div class="place-thumb">
+          <div class="place-thumb-icon">∾</div>
+          <div class="place-thumb-label">Hog Island, Marshall</div>
+        </div>
+        <div class="place-body">
+          <div class="place-kicker">The Lunch</div>
+          <h3 class="place-name">Hog Island <em>Oyster Farm</em></h3>
+          <p class="place-desc">
+            Tomales Bay oysters from the source. Two ways in: the Boat Oyster Bar (walk-up, shucked-for-you, first-come)
+            or a reserved picnic table with a grill where you shuck your own. Fri–Mon the picnic tables are
+            <strong>reservation only</strong> — book this before the trip. The Hog Shack retail stays open 9–5 if you
+            want to take home a sack.
+          </p>
+          <div class="place-facts">
+            <div class="fact"><div class="fact-label">Hours</div><div class="fact-value">Fri–Mon <strong>11 AM–4 PM</strong></div></div>
+            <div class="fact"><div class="fact-label">Dogs</div><div class="fact-value"><span class="yes">Outdoor</span></div></div>
+            <div class="fact"><div class="fact-label">Reserve</div><div class="fact-value"><strong>Yes — picnic tables</strong></div></div>
+            <div class="fact"><div class="fact-label">Address</div><div class="fact-value">20215 CA-1, Marshall</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chimney Rock -->
+      <div class="place-card">
+        <div class="place-thumb">
+          <div class="place-thumb-icon">⩕</div>
+          <div class="place-thumb-label">Chimney Rock</div>
+        </div>
+        <div class="place-body">
+          <div class="place-kicker">The Hike</div>
+          <h3 class="place-name">Chimney Rock <em>Trail</em></h3>
+          <p class="place-desc">
+            A 1.8-mile out-and-back along an open coastal headland. Wildflowers linger into early June — sun cups,
+            paintbrush, blue-eyed grass. Elephant seals are still on the beaches if you're lucky. Exposed and
+            often windy, so layers and a windbreaker are non-negotiable. <strong>No dogs allowed</strong> — Mochi
+            stays in the car at the (shaded, breezy) trailhead pullout, or one person waits with him.
+          </p>
+          <div class="place-facts">
+            <div class="fact"><div class="fact-label">Distance</div><div class="fact-value"><strong>1.8 mi RT</strong></div></div>
+            <div class="fact"><div class="fact-label">Time</div><div class="fact-value">1–2 hr</div></div>
+            <div class="fact"><div class="fact-label">Dogs</div><div class="fact-value"><span class="no">No</span> — NPS rule</div></div>
+            <div class="fact"><div class="fact-label">Difficulty</div><div class="fact-value">Easy, exposed</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lighthouse -->
+      <div class="place-card">
+        <div class="place-thumb">
+          <div class="place-thumb-icon">↟</div>
+          <div class="place-thumb-label">Point Reyes Lighthouse</div>
+        </div>
+        <div class="place-body">
+          <div class="place-kicker">The View</div>
+          <h3 class="place-name">Point Reyes <em>Lighthouse</em></h3>
+          <p class="place-desc">
+            Built 1870, perched on the windiest headland on the Pacific coast. The lighthouse itself sits 300 feet
+            below the visitor center — <strong>308 steps down</strong>, and 308 back up. The visitor center closes
+            at 4 PM (Thu–Mon, closed Tue/Wed) but the overlook and stairs stay accessible until dusk in calm winds.
+            Stairs close automatically when wind tops 40 mph — check the NPS conditions page that morning.
+          </p>
+          <div class="place-facts">
+            <div class="fact"><div class="fact-label">Hours</div><div class="fact-value">Thu–Mon <strong>10–4</strong></div></div>
+            <div class="fact"><div class="fact-label">Dogs</div><div class="fact-value"><span class="no">No</span> — NPS rule</div></div>
+            <div class="fact"><div class="fact-label">Stairs</div><div class="fact-value">308 each way</div></div>
+            <div class="fact"><div class="fact-label">Trail</div><div class="fact-value">1.3 mi RT total</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="callout sweater">
+      <div class="callout-label">⌖ Sleeper Detail · The Hidden Hours</div>
+      <div class="callout-body">
+        The light at Cypress Tunnel and the wildflowers at Chimney Rock are <strong>not the headliners</strong> —
+        the headliners are the moments you stop the car between them. The Tomales Bay roadside pullouts north of
+        Marshall are some of the most beautiful in California and require zero effort. Don't skip them.
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<!-- ==================== SECTION 03 — PACKING ==================== -->
+<div class="container" id="packing">
+  <section class="pb-section">
+    <div class="pb-sec-head">
+      <div class="pb-sec-num">03</div>
+      <div class="pb-sec-title-block">
+        <div class="pb-sec-kicker">Section Three · Packing</div>
+        <h2 class="pb-sec-title">Bring this. <em>Layers, mostly.</em></h2>
+      </div>
+    </div>
+
+    <p class="day-note" style="margin-bottom:36px; max-width: 720px;">
+      Point Reyes in June runs 67°F high, 53°F low. Foggy mornings, windy afternoons.
+      Coastal headlands are typically 15–20°F cooler than the town. Star (★) items are non-negotiable.
+    </p>
+
+    <div class="pack-grid">
+
+      <div class="pack-col">
+        <div class="pack-col-title"><em>For</em> the people</div>
+        <ul class="pack-list">
+          <li class="essential">Windproof shell jacket</li>
+          <li class="essential">Fleece or mid-layer (one each)</li>
+          <li class="essential">Long-sleeve base layers</li>
+          <li>One warm-weather outfit (in case)</li>
+          <li>Comfortable hiking shoes / sneakers</li>
+          <li class="essential">Sunglasses + sunscreen (UV is high through fog)</li>
+          <li>Wool socks (Chimney Rock wind)</li>
+          <li>Beanie or warm hat</li>
+          <li>Reusable water bottles</li>
+          <li>Pajamas + lounge clothes</li>
+          <li>Toothbrushes + toiletries</li>
+        </ul>
+      </div>
+
+      <div class="pack-col">
+        <div class="pack-col-title"><em>For</em> Mochi</div>
+        <ul class="pack-list">
+          <li class="essential">Leash + harness</li>
+          <li class="essential">Food (enough for 3 days + buffer)</li>
+          <li class="essential">Collapsible water bowl + food bowl</li>
+          <li class="essential">Poop bags (lots)</li>
+          <li>Bed or blanket from home</li>
+          <li>Favorite toy / chew</li>
+          <li>Treats</li>
+          <li>Towel (for muddy paws)</li>
+          <li>Vaccine records (just in case)</li>
+          <li>Mochi sweater for windy Chimney Rock pullouts</li>
+        </ul>
+      </div>
+
+      <div class="pack-col">
+        <div class="pack-col-title"><em>For</em> Richard's mornings</div>
+        <ul class="pack-list">
+          <li class="essential">Laptop + charger</li>
+          <li class="essential">Phone charger</li>
+          <li>Headphones (for 3 AM call discretion)</li>
+          <li>Reusable mug for the Keurig</li>
+          <li>Coffee pods (the room has a Keurig)</li>
+          <li>Hotspot or check Inn's Wi-Fi password</li>
+          <li>Anything you'd grab in a lobby café</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </section>
+</div>
+
+<!-- ==================== SECTION 04 — NOTES ==================== -->
+<div class="container" id="notes">
+  <section class="pb-section">
+    <div class="pb-sec-head">
+      <div class="pb-sec-num">04</div>
+      <div class="pb-sec-title-block">
+        <div class="pb-sec-kicker">Section Four · Notes &amp; Reminders</div>
+        <h2 class="pb-sec-title">Things to know <em>before we go.</em></h2>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">⚠ Dogs on Trails · The Big One</div>
+      <div class="callout-body">
+        <strong>Most Point Reyes National Seashore trails do not allow dogs</strong> — including the Lighthouse
+        and Chimney Rock. The only stops on this itinerary where Mochi joins are the Cypress Tree Tunnel (leashed),
+        Heidrun (outdoor garden), Hog Island (outdoor), and the town of Point Reyes Station. For the Lighthouse and
+        Chimney Rock, plan to take turns or sit with Mochi at the (cool, breezy, shaded) parking pullouts.
+      </div>
+    </div>
+
+    <div class="callout sweater">
+      <div class="callout-label">⌖ Richard's "Lobby" · The Working Patio</div>
+      <div class="callout-body">
+        The Point Reyes Station Inn doesn't have a true lobby with a coffee service to camp out in early. Each
+        room has its own Keurig. The <strong>Sun Room's private garden patio</strong> is the de facto lobby —
+        quiet, outdoors, Wi-Fi reachable. Plan around it: pre-load a thermos, bring a portable light, and confirm
+        the Wi-Fi password at check-in Friday evening.
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">⚠ Reservations to Make</div>
+      <div class="callout-body">
+        <strong>Hog Island picnic tables (Saturday)</strong> — Fri–Mon they're reservation-only via Tock or
+        SeatMe. Book before the trip if you want the grill table experience. Walk-up oysters at the Boat Bar
+        otherwise.<br/>
+        <strong>Heidrun Saturday Tour ($45)</strong> — optional but books out. Reserve on exploretock.com if Chris
+        wants it.
+      </div>
+    </div>
+
+    <div class="callout lime">
+      <div class="callout-label">✓ The Morning of, Check</div>
+      <div class="callout-body">
+        <strong>nps.gov/pore/planyourvisit/conditions.htm</strong> — Lighthouse stair closures (40 mph winds),
+        any road or trail closures. Coastal fog forecast on weather.gov. If the lighthouse stairs are closed,
+        flip Saturday's afternoon and do Chimney Rock + Tomales Point overlook instead.
+      </div>
+    </div>
+
+    <div class="callout sweater">
+      <div class="callout-label">⌖ Hotel Quick Facts</div>
+      <div class="callout-body">
+        <strong>Point Reyes Station Inn · Sun Room</strong> · 11591 CA-1, Point Reyes Station, CA 94956 ·
+        Check-in 6:00 PM Fri · Check-out 11:00 AM Sun · Confirmation #11448546 · 2 nights, $433.20 total ·
+        Dog-friendly (no pet fee) · Private garden patio · Keurig in room.
+      </div>
+    </div>
+
+    <div class="pb-pullquote">
+      The point isn't to see everything. It's to drink mead in a garden, eat oysters off a boat,
+      walk under a tunnel of cypress trees, and let Richard nap when he needs to.
+      <span class="attr">The Brief · Chris &amp; Richard's Weekend, June 2026</span>
+    </div>
+
+  </section>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<div class="container">
+  <footer>
+    <div>For <em>Richard</em> · Compiled by Chris · May 2026</div>
+    <div>Point Reyes · Marin County · California</div>
+  </footer>
+</div>
+
+</body>
+</html>
