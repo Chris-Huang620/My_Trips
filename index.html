@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Field Notes · Trips</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream: #F0E8D8;
+    --cream-2: #E8DFCB;
+    --cream-3: #DCD0B6;
+    --ink: #1A1612;
+    --ink-soft: #3D352D;
+    --ink-mute: #6B6157;
+    --crimson: #B53029;
+    --line: #C9BFA8;
+    --line-soft: #DCD2BC;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink-soft);
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 56px;
+    width: 100%;
+  }
+
+  /* ---------- Masthead ---------- */
+  .masthead {
+    border-bottom: 1px solid var(--line);
+    padding: 22px 0;
+  }
+  .masthead-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .masthead-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .masthead-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 96px 0 64px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 24px;
+  }
+  .hero-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin-bottom: 28px;
+    max-width: 12ch;
+  }
+  .hero-title em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--crimson);
+  }
+  .hero-lede {
+    font-size: 19px;
+    line-height: 1.6;
+    max-width: 58ch;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Trip grid ---------- */
+  .trips {
+    padding: 72px 0 96px;
+    flex: 1;
+  }
+  .section-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-kicker::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .trip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 28px;
+  }
+
+  .trip-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: var(--cream-2);
+    border: 1px solid var(--line);
+    padding: 32px 30px 28px;
+    transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    position: relative;
+  }
+  .trip-card:hover {
+    background: var(--cream-3);
+    border-color: var(--ink-mute);
+    transform: translateY(-2px);
+  }
+  .trip-card-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 18px;
+  }
+  .trip-card-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .trip-card-title em {
+    font-style: italic;
+    color: var(--crimson);
+  }
+  .trip-card-lede {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+  }
+  .trip-card-meta {
+    display: flex;
+    gap: 20px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line-soft);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .trip-card-arrow {
+    position: absolute;
+    top: 30px;
+    right: 28px;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 22px;
+    color: var(--ink-mute);
+    transition: transform 180ms ease, color 180ms ease;
+  }
+  .trip-card:hover .trip-card-arrow {
+    color: var(--crimson);
+    transform: translate(3px, -3px);
+  }
+
+  /* Empty / coming-soon card */
+  .trip-card.is-empty {
+    background: transparent;
+    border-style: dashed;
+    cursor: default;
+  }
+  .trip-card.is-empty:hover {
+    transform: none;
+    background: transparent;
+    border-color: var(--line);
+  }
+  .trip-card.is-empty .trip-card-title {
+    color: var(--ink-mute);
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 28px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .footer-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  @media (max-width: 720px) {
+    .container { padding: 0 24px; }
+    .hero { padding: 64px 0 48px; }
+    .trips { padding: 56px 0 72px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="container masthead-row">
+    <div class="masthead-title">Field Notes</div>
+    <div class="masthead-meta">A Travel Index</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Trips · Past &amp; Forthcoming</div>
+    <h1 class="hero-title">Slow weekends, <em>collected</em>.</h1>
+    <p class="hero-lede">
+      A small archive of trips — itineraries, packing notes, and the occasional photograph.
+      Each entry is its own field guide. Choose a destination to step inside.
+    </p>
+  </div>
+</section>
+
+<main class="trips">
+  <div class="container">
+    <div class="section-kicker">The Collection</div>
+
+    <div class="trip-grid">
+
+      <a href="/trips/point-reyes-2026/" class="trip-card">
+        <div class="trip-card-eyebrow">June 5–7, 2026 · California</div>
+        <span class="trip-card-arrow">→</span>
+        <h2 class="trip-card-title">A Slow Weekend at <em>Point Reyes</em></h2>
+        <p class="trip-card-lede">
+          Two nights at the edge of the Pacific. Oysters, mead, fog-bleached cliffs,
+          and one very photogenic tunnel of cypress trees.
+        </p>
+        <div class="trip-card-meta">
+          <span>2 Nights</span>
+          <span>3 Travelers</span>
+          <span>Field Guide</span>
+        </div>
+      </a>
+
+      <div class="trip-card is-empty">
+        <div class="trip-card-eyebrow">Coming Soon</div>
+        <h2 class="trip-card-title">The next one</h2>
+        <p class="trip-card-lede">
+          A new entry is in the works. Check back shortly.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <span>© Chris · Field Notes</span>
+    <span>Maintained by hand</span>
+  </div>
+</footer>
+
+</body>
+</html>

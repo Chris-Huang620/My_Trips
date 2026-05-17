@@ -1,8 +1,6 @@
 # OS cruft
 .DS_Store
 
-# Inside each trip folder, only commit the deploy/ output.
-# Working files (source HTML, .skill files, raw photos, notes) stay local.
-/*/*
-!/*/deploy/
-!/*/deploy/**
+# Working files: source drafts, raw photos, skills, notes.
+# Only what's in trips/ and the root hub gets deployed.
+/_src/
